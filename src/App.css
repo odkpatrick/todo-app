@@ -280,11 +280,9 @@ div[class^="list-item-container"] div {
   cursor: pointer;
 }
 .footer-wrapper {
-  position: absolute;
-  bottom: 0;
   width: 100vw;
   text-align: center;
-  padding-bottom: 3rem;
+  padding: 3rem 0;
 }
 .footer-text {
   font-weight: var(--font-weight-bold);
