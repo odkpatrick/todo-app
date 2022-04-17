@@ -345,27 +345,7 @@ div[class^="list-item-container"] div {
   .list-item-delete-btn {
     display: none;
   }
-  .list-item-container-0:hover .list-item-delete-btn,
-  .list-item-container-1:hover .list-item-delete-btn,
-  .list-item-container-2:hover .list-item-delete-btn,
-  .list-item-container-3:hover .list-item-delete-btn,
-  .list-item-container-4:hover .list-item-delete-btn,
-  .list-item-container-5:hover .list-item-delete-btn,
-  .list-item-container-6:hover .list-item-delete-btn,
-  .list-item-container-7:hover .list-item-delete-btn,
-  .list-item-container-8:hover .list-item-delete-btn,
-  .list-item-container-9:hover .list-item-delete-btn,
-  .list-item-container-10:hover .list-item-delete-btn,
-  .list-item-container-11:hover .list-item-delete-btn,
-  .list-item-container-12:hover .list-item-delete-btn,
-  .list-item-container-13:hover .list-item-delete-btn,
-  .list-item-container-14:hover .list-item-delete-btn,
-  .list-item-container-15:hover .list-item-delete-btn,
-  .list-item-container-16:hover .list-item-delete-btn,
-  .list-item-container-17:hover .list-item-delete-btn,
-  .list-item-container-18:hover .list-item-delete-btn,
-  .list-item-container-19:hover .list-item-delete-btn,
-  .list-item-container-20:hover .list-item-delete-btn {
+  .list-item-container-0:hover .list-item-delete-btn, .list-item-container-1:hover .list-item-delete-btn, .list-item-container-2:hover .list-item-delete-btn, .list-item-container-3:hover .list-item-delete-btn, .list-item-container-4:hover .list-item-delete-btn, .list-item-container-5:hover .list-item-delete-btn, .list-item-container-6:hover .list-item-delete-btn, .list-item-container-7:hover .list-item-delete-btn, .list-item-container-8:hover .list-item-delete-btn, .list-item-container-9:hover .list-item-delete-btn, .list-item-container-10:hover .list-item-delete-btn, .list-item-container-11:hover .list-item-delete-btn, .list-item-container-12:hover .list-item-delete-btn, .list-item-container-13:hover .list-item-delete-btn, .list-item-container-14:hover .list-item-delete-btn, .list-item-container-15:hover .list-item-delete-btn, .list-item-container-16:hover .list-item-delete-btn, .list-item-container-17:hover .list-item-delete-btn, .list-item-container-18:hover .list-item-delete-btn, .list-item-container-19:hover .list-item-delete-btn, .list-item-container-20:hover .list-item-delete-btn, .list-item-container-21:hover .list-item-delete-btn, .list-item-container-22:hover .list-item-delete-btn, .list-item-container-23:hover .list-item-delete-btn, .list-item-container-24:hover .list-item-delete-btn, .list-item-container-25:hover .list-item-delete-btn, .list-item-container-26:hover .list-item-delete-btn, .list-item-container-27:hover .list-item-delete-btn, .list-item-container-28:hover .list-item-delete-btn, .list-item-container-29:hover .list-item-delete-btn, .list-item-container-30:hover .list-item-delete-btn  {
     display: block;
   }
   .list-item-container {
