@@ -219,12 +219,12 @@ div[class^="list-display-container"] ul {
 .control-btn.active {
   color: var(--color-primary);
 }
-
 div[class^="list-item-container"] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--bg-1);
   border-bottom: 1px solid var(--bg-3);
   padding: 1rem;
 }
@@ -232,6 +232,9 @@ div[class^="list-item-container"] div {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+.list-item-container-0 {
+  border-radius: 8px 8px 0 0;
 }
 .list-item-check-btn {
   display: block;
