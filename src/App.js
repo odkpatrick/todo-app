@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import './App.css';
 
@@ -185,6 +186,26 @@ function App() {
     setDarkMode(!currentDarkMode);
   }
 
+  const handleOnDragEnd = result => {
+    let items = Array.from(displayList);
+    const filterValue = filter;
+
+    if (filterValue===0) {
+      items = Array.from(todoList);
+      const [reorderedItem] = items.splice(result.source.index, 1);
+      items.splice(result.destination.index, 0, reorderedItem);
+      for(let i=0; i<items.length; i++) {
+        items[i].id = i;
+      }
+      setTodoList(items);
+      setDisplayList(items);
+    } else {
+      const [reorderedItem] = items.splice(result.source.index, 1);
+      items.splice(result.destination.index, 0, reorderedItem);
+      setDisplayList(items);
+    }
+  }
+
   const title = (<h1 className="title">todo</h1>);
   
   const ToggleButton = (props) => (
@@ -248,36 +269,55 @@ function App() {
   );
 
   const ListDisplayTop = (props) => {
-    const listItems = props.myList.map((item) => (
-    <li key={item.id}>
-      <div className={"list-item-container-" + item.id}>
-        <div>
-          <CheckButton 
-          complete={item.complete}
-          id={item.id}
-          toggleComplete={props.toggleComplete} 
-          />
-          <p 
-          className={"list-item-text" + ((item.complete) ? " done" : "")}
-          onClick={() => {props.toggleComplete(item.id)}}
+    const listItems = props.myList.map((item, index) => (
+      <Draggable key={item.id} draggableId={item.text} index={index}>
+        {(provided) => (
+          <li 
+          ref={provided.innerRef} 
+          {...provided.draggableProps} 
+          {...provided.dragHandleProps}
           >
-            {item.text}
-          </p>
-        </div>
-        <DeleteButton 
-        complete={item.complete} 
-        id={item.id}
-        deleteItem={props.deleteItem}
-        />
-      </div>
-    </li>
+            <div className={"list-item-container-" + item.id}>
+              <div>
+                <CheckButton 
+                complete={item.complete}
+                id={item.id}
+                toggleComplete={props.toggleComplete} 
+                />
+                <p 
+                className={"list-item-text" + ((item.complete) ? " done" : "")}
+                onClick={() => {props.toggleComplete(item.id)}}
+                >
+                  {item.text}
+                </p>
+              </div>
+              <DeleteButton 
+              complete={item.complete} 
+              id={item.id}
+              deleteItem={props.deleteItem}
+              />
+            </div>
+          </li>
+        )}
+      </Draggable>
     ));
 
     return (
       <div>
-        <ul>
-          { listItems }
-        </ul>
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Droppable droppableId="tasks">
+            {(provided) => (
+              <ul 
+              className="tasks" 
+              {...provided.droppableProps} 
+              ref={provided.innerRef}
+              >
+                { listItems }
+                {provided.placeholder}
+              </ul>
+            )}
+          </Droppable>
+        </DragDropContext>
       </div>
     );
   };
