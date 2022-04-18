@@ -380,12 +380,14 @@ function App() {
             onSubmit={handleSubmit}
             >
               <div className="input-container">
-                <label className="input-icon">
+                <label className="input-icon" for="input">
                   <span className="sr-only">Enter new todo item:</span>
                 </label>
                 <input 
                 type="text" 
                 className="input" 
+                name="input"
+                id="input"
                 placeholder="Create a new todo..."
                 value={newItem}
                 onChange={handleOnChange}
